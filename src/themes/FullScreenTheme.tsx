@@ -47,10 +47,8 @@ export const FullScreenTheme = (theme: Theme) => `
 
   .feedbot-wrapper {
     background-color: transparent;
-    width: 95%;
     max-width: 900px;
     min-width: 300px;
-    height: 96%;
     max-height: 98.5%;
     min-height: 500px;
 
@@ -61,7 +59,10 @@ export const FullScreenTheme = (theme: Theme) => `
     -ms-flex-direction: column;
     flex-direction: column;
 
-    position: absolute;
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    right: 2%;
     bottom: 0;
   }
 
