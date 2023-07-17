@@ -1,4 +1,3 @@
-import 'core-js'
 import * as React from 'react'
 import { ChatProps } from '../Chat'
 import { renderWebchatApp } from './renderWebchatApp'
