@@ -172,6 +172,7 @@ export interface FormatState {
     chatTitle: boolean | string,
     locale: string,
     showUploadButton: boolean,
+    uploadCapture: 'image/*' | 'video/*' | 'audio/*' | string,
     disableInput: boolean,
     disableInputWhenNotNeeded: boolean
     strings: Strings,
@@ -191,6 +192,9 @@ export type FormatAction = {
     type: 'Toggle_Upload_Button',
     showUploadButton: boolean
 } | {
+    type: 'Set_Upload_Capture',
+    uploadCapture: string
+} | {
     type: 'Toggle_Disable_Input',
     disableInput: boolean
 } | {
@@ -207,6 +211,7 @@ export const format: Reducer<FormatState> = (
         chatTitle: true,
         locale: 'en-us',
         showUploadButton: true,
+        uploadCapture: '',
         disableInput: false,
         disableInputWhenNotNeeded: false,
         strings: defaultStrings,
@@ -235,6 +240,11 @@ export const format: Reducer<FormatState> = (
             return {
                 ...state,
                 showUploadButton: action.showUploadButton
+            };
+        case 'Set_Upload_Capture':
+            return {
+                ...state,
+                uploadCapture: action.uploadCapture
             };
         case 'Toggle_Disable_Input':
             return {

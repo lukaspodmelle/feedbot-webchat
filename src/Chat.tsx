@@ -58,6 +58,7 @@ export interface ChatProps {
     selectedActivity?: BehaviorSubject<ActivityOrID>,
     sendTyping?: boolean,
     showUploadButton?: boolean,
+    uploadCapture?: 'image/*' | 'video/*' | 'audio/*',
     disableInputWhenNotNeeded?: boolean,
     formatOptions?: FormatOptions,
     resize?: 'none' | 'window' | 'detect',
@@ -148,6 +149,8 @@ export class Chat extends React.Component<ChatProps, {}> {
         }
 
         this.store.dispatch<ChatActions>({ type: 'Toggle_Upload_Button', showUploadButton: props.showUploadButton !== false });
+
+        this.store.dispatch<ChatActions>({ type: 'Set_Upload_Capture', uploadCapture: props.uploadCapture });
 
         this.store.dispatch<ChatActions>({ type: 'Toggle_Disable_Input', disableInput: props.disableInputWhenNotNeeded });
 

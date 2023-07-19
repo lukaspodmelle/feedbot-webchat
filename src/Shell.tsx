@@ -14,6 +14,7 @@ interface Props {
     strings: Strings,
     listeningState: ListeningState,
     showUploadButton: boolean,
+    uploadCapture: 'image/*' | 'video/*' | 'audio/*' | string,
     disableInput: boolean
 
     onChangeText: (inputText: string) => void
@@ -159,6 +160,8 @@ class ShellContainer extends React.Component<Props> implements ShellFunctions {
                         onChange={() => this.onChangeFile()}
                         aria-label={this.props.strings.uploadFile}
                         role="button"
+                        capture={!!this.props.uploadCapture}
+                        accept={this.props.uploadCapture}
                     />
                 }
                 {
@@ -217,6 +220,7 @@ export const Shell = connect(
         // passed down to ShellContainer
         inputText: state.shell.input,
         showUploadButton: state.format.showUploadButton,
+        uploadCapture: state.format.uploadCapture,
         disableInput: state.format.disableInput,
         strings: state.format.strings,
         // only used to create helper functions below
@@ -236,6 +240,7 @@ export const Shell = connect(
     // from stateProps
     inputText: stateProps.inputText,
     showUploadButton: stateProps.showUploadButton,
+    uploadCapture: stateProps.uploadCapture,
     disableInput: stateProps.disableInput,
     strings: stateProps.strings,
     listeningState: stateProps.listeningState,
