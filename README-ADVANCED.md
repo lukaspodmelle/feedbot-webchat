@@ -35,8 +35,9 @@ const YourApp = () => {
 ## Building Web Chat
 
 1. Clone (or fork) this repo
-2. `npm install`
-3. `npm run build` (to build on every change `npm run watch`, to build production `npm run prepublish`)
+2. Install Node.js v8 - newer versions does not support node-sass in this project (you can use [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) to manage multiple versions easily)
+3. `npm install`
+4. `npm run build` (to build on every change `npm run watch`, to build production `npm run prepublish`)
 
 This builds the following:
 
@@ -47,6 +48,8 @@ This builds the following:
 * `/botchat.css` base stylesheet
 * `/botchat-es5.js` is the Webpack bundle (a.k.a. `botchat.js`) plus polyfills for ES5 browsers
 * `/botchat-fullwindow.css` media query stylesheet for a full-window experience
+
+Then just open some example (such as `/samples/feedyou/local.html`), make sure it points to local versions of `botchat.css/js` files using `../../`, set `bot.id` and other params and you are ready to start.
 
 ## Customizing Web Chat
 
