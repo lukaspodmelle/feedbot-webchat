@@ -62,6 +62,7 @@ $card_padding: 8px;
 	cursor: pointer;
 	font-size: 1em;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	font-family: $fontFamily;
 }
@@ -76,9 +77,13 @@ $card_padding: 8px;
 	font-size: 1.2em;
 	line-height: 0.9em;
 }
+.feedbot-header .feedbot-minimize:hover {
+	color: $black;
+}
 .feedbot-wrapper .wc-chatview-panel {
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
+	border-top: 1px solid $silverMedium;
 }
 .wc-app .wc-chatview-panel {
 	top: 75px;
@@ -154,6 +159,8 @@ $card_padding: 8px;
 	width: 75px;
 	min-width: auto;
 	height: 75px;
+	bottom: 24px;
+	right: 24px;
 }
 .feedbot-wrapper.collapsed .feedbot-header {
 	border-radius: 40px;
@@ -164,7 +171,7 @@ $card_padding: 8px;
 	white-space: nowrap;
 	overflow: hidden;
 	font-size: 0px;
-	/* background image (chat icon) is set in redesign template */
+	/* background image (chat icon) is set in redesign themes (./themes) */
 	background-size: 45px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -240,14 +247,12 @@ $card_padding: 8px;
 	display: none;
 }
 
-.feedbot-wrapper .feedbot-signature {
+.feedbot-signature {
 	position: absolute;
-	bottom: -23px;
-	font-size: 13px;
-	right: -5px;
 	opacity: 0.3;
+	color: $black;
 	font-family: $fontFamily;
-
+	/* positioning is set in redesign themes (./themes) */
 	height: 22px;
 	display: block;
 	align-items: center;
@@ -263,8 +268,7 @@ $card_padding: 8px;
 }
 
 .feedbot-signature a {
-	transition: 0.3s;
-	color: black;
+	color: $black;
 	text-decoration: none;
 	margin: 0 4px;
 	display: flex;
@@ -273,6 +277,8 @@ $card_padding: 8px;
 
 .feedbot-signature a:hover {
 	cursor: pointer;
+	color: $black;
+	text-decoration: underline;
 }
 
 .feedbot-signature a img {
@@ -281,6 +287,7 @@ $card_padding: 8px;
 
 .feedbot-signature-row {
 	display: flex;
+	align-items: center;
 	height: 100%;
 }
 /*
@@ -345,7 +352,6 @@ body .wc-app,
 	right: 0;
 	top: 0;
 	transition: transform $actionTransition;
-	border-top: 1px solid $silverMedium;
 
 	&.no-header {
 		top: 0;
@@ -1096,20 +1102,6 @@ body .wc-app,
 }
 .feedbot-wrapper.collapsed .feedbot-avatar {
 	display: none;
-}
-.feedbot-wrapper.collapsed .feedbot-header:before {
-	position: absolute;
-	content: '';
-	top: 0px;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: 100px;
-	z-index: 0;
-	filter: brightness(0.7);
-	/* border-color is set in redesign template */
-	border-style: solid;
-	border-width: 2px;
 }
 .feedbot-name {
 	display: flex;

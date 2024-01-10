@@ -3,6 +3,7 @@ import { FullScreenTheme } from './FullScreenTheme';
 import { ExpandableKnobTheme } from './ExpandableKnobTheme';
 import { SidebarTheme } from './SidebarTheme';
 import { ExpandableKnobThemeNew } from './ExpandableKnobThemeNew';
+import { SidebarThemeNew } from './SidebarThemeNew';
 
 export type Theme = {
 	mainColor: string;
@@ -31,6 +32,7 @@ export type Theme = {
 		partnerLogoUrl: string;
 		partnerLogoStyle: string;
 		partnerLinkUrl: string;
+		partnerName: string;
 		mode: string;
 	};
 };
@@ -42,13 +44,13 @@ export function getStyleForTheme(theme: Theme, remoteConfig: boolean): string {
 		case 'full-screen':
 			return FullScreenTheme(theme);
 		case 'expandable-knob':
-			return ExpandableKnobThemeNew(
-				theme
-			); /* LP: pro dev; vrátit zpět ExpandableKnobTheme(theme);*/
+			return ExpandableKnobTheme(theme);
 		case 'sidebar':
 			return SidebarTheme(theme);
 		case 'expandable-knob-new':
 			return ExpandableKnobThemeNew(theme);
+		case 'sidebar-new':
+			return SidebarThemeNew(theme);
 	}
 
 	// backward compatibility - knob is new default for remote config, old default is bar

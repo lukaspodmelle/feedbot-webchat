@@ -19,9 +19,8 @@ export const Header: React.StatelessComponent<Props> = ({
 	} = appProps;
 
 	let backgroundColor;
-	{/* LP: for dev; pak změnit type na 'expandable-knob-new' */}
-	if (template.type !== 'expandable-knob') {
-		backgroundColor = mainColor || '#e51836';
+	if (template.type !== 'expandable-knob-new' && template.type !== 'sidebar-new') {
+		backgroundColor = mainColor || '#fb584e';
 	}
 
 	const title = getTitle(appProps, isCollapsed);
@@ -33,20 +32,16 @@ export const Header: React.StatelessComponent<Props> = ({
 		<div
 			className='feedbot-header'
 			onClick={onClick}
-			style={{ backgroundColor, justifyContent: 'space-between' }}>
+			style={{ backgroundColor }}>
 			<div className='feedbot-header-name'>
-				{/* LP: for dev; pak změnit type na 'expandable-knob-new' */}
-				{template.type === 'expandable-knob' ? (
+				{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
 					<div className='feedbot-avatar' style={{backgroundImage: `url("${avatar}")`}}>
 					</div>
 				) : null}
 				<div className='feedbot-name'>
 					<span className='feedbot-title'>{title}</span>
-						{/* LP: for dev; pak změnit type na 'expandable-knob-new' */}
-						{template.type === 'expandable-knob' ? (
+						{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
 							<span className='feedbot-supportive-title'>
-								{/* LP: for dev; pak text odstranit */}
-								S čím vám dnes mohu pomoci?
 								{template.supportiveTitle}
 							</span>
 						): null}
@@ -64,8 +59,7 @@ export const Header: React.StatelessComponent<Props> = ({
 				onClick={(e) => e.preventDefault()}
 				className='feedbot-minimize'
 				href='#'>
-				{/* LP: for dev; pak změnit type na 'expandable-knob-new' */}
-				{template.type === 'expandable-knob' ? (
+				{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
 					<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M17.5303 8.46967C17.8232 8.76256 17.8232 9.23744 17.5303 9.53033L9.53033 17.5303C9.23744 17.8232 8.76256 17.8232 8.46967 17.5303C8.17678 17.2374 8.17678 16.7626 8.46967 16.4697L16.4697 8.46967C16.7626 8.17678 17.2374 8.17678 17.5303 8.46967Z" fill="currentColor"/>
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M8.46967 8.46967C8.76256 8.17678 9.23744 8.17678 9.53033 8.46967L17.5303 16.4697C17.8232 16.7626 17.8232 17.2374 17.5303 17.5303C17.2374 17.8232 16.7626 17.8232 16.4697 17.5303L8.46967 9.53033C8.17678 9.23744 8.17678 8.76256 8.46967 8.46967Z" fill="currentColor"/>

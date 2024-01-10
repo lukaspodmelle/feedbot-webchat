@@ -4,7 +4,7 @@ import { CustomStylesForCssClass } from '../../../CustomStylesForCssClass';
 
 export type Props = {
 	href: string;
-	imgSrc?: string;
+	imgSrc: string;
 	className?: string;
 	customStyles?: string;
 	text?: string;
@@ -22,7 +22,7 @@ export const SignatureLink: React.StatelessComponent<Props> = ({
 			className={cx('signature-link', className)}
 			target='_blank'
 			href={href}>
-			{imgSrc ? <img src={imgSrc} /> : text}
+			{imgSrc ? <img src={imgSrc} alt='Logo' /> : text}
 			{className && customStyles && (
 				<CustomStylesForCssClass
 					cssClass={className}
