@@ -10,7 +10,7 @@ import { generateUserId } from '../utils/generateUserId'
 export type AppProps = ChatProps & {
   theme?: Theme; // option to override theme settings from remote config
   defaultTheme?: Theme; // option to set default template when no remote config found (on default microsite for example)
-  header?: { textWhenCollapsed?: string; text: string, extraHtml?: string };
+  header?: { textWhenCollapsed?: string; text: string, extraHtml?: string, image?: string };
   channel?: { index?: number, id?: string };
   autoExpandTimeout?: number;
   enableScreenshotUpload?: boolean;
@@ -213,7 +213,7 @@ export const App = async (props: AppProps, container?: HTMLElement) => {
   
   // FEEDYOU configurable theming
   if (props.theme || !container) {
-    const theme = { mainColor: "#D83838", ...props.theme };
+    const theme = { mainColor: "#0063f8", ...props.theme };
     props.theme && (props.theme.enableScreenshotUpload = !!props.enableScreenshotUpload)
     const themeStyle = document.createElement("style");
     themeStyle.type = "text/css";

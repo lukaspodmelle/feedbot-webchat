@@ -1,9 +1,9 @@
-import { ExpandableKnobTheme } from './ExpandableKnobTheme'
-import { Theme } from './index'
+import { ExpandableKnobTheme } from './ExpandableKnobTheme';
+import { Theme } from './index';
 
 function getSidebarBackgroundColor(theme: Theme) {
-	return '#e1e1e1'
-	
+	return '#e1e1e1';
+
 	// TODO make background tint configurable in theme
 	/*const color = theme.mainColor
 	if(color.startsWith("rgb")){
@@ -79,7 +79,9 @@ export const SidebarTheme = (theme: Theme) => `
   @supports ((-webkit-backdrop-filter: blur(40px)) or (backdrop-filter: blur(40px))) {
     .feedbot-wrapper {
       max-height: 100%;
-      background: linear-gradient(45deg, ${getSidebarBackgroundColor(theme)}33,  #E1E1E1CE);
+      background: linear-gradient(45deg, ${getSidebarBackgroundColor(
+			theme
+		)}33,  #E1E1E1CE);
       backdrop-filter: blur(40px);
       -webkit-backdrop-filter: blur(40px);
     }
@@ -137,4 +139,4 @@ export const SidebarTheme = (theme: Theme) => `
     justify-content: center;
   }
   
-`
+`;
