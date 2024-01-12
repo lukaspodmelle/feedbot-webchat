@@ -24,6 +24,10 @@ export type Theme = {
 		logoUrl?: string;
 		avatar?: string;
 		supportiveTitle?: string;
+		persistentMenu?: [{
+			title: string;
+			dialog: string;
+		}]
 	};
 	customCss?: string;
 	showSignature?: boolean;
