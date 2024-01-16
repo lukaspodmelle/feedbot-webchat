@@ -1,13 +1,13 @@
-import * as React from 'react';
-import cx from 'classnames';
-import { CustomStylesForCssClass } from '../../../CustomStylesForCssClass';
+import * as React from 'react'
+import cx from 'classnames'
+import { CustomStylesForCssClass } from '../../../CustomStylesForCssClass'
 
 export type Props = {
-	href: string;
-	imgSrc: string;
-	className?: string;
-	customStyles?: string;
-	text?: string;
+	href: string,
+	imgSrc: string
+	className?: string
+	customStyles?: string
+	text?: string
 };
 
 export const SignatureLink: React.StatelessComponent<Props> = ({
@@ -18,19 +18,12 @@ export const SignatureLink: React.StatelessComponent<Props> = ({
 	text,
 }) => {
 	return (
-		<a
-			className={cx('signature-link', className)}
-			target='_blank'
-			href={href}>
+		<a className={cx('signature-link', className)} target="_blank" href={href}>
 			{imgSrc ? <img src={imgSrc} alt='Logo' /> : text}
-			{className && customStyles && (
-				<CustomStylesForCssClass
-					cssClass={className}
-					styles={customStyles}
-				/>
-			)}
+			{className && customStyles &&
+				<CustomStylesForCssClass cssClass={className} styles={customStyles} />}
 		</a>
-	);
-};
+	)
+}
 
-export type SignatureLinkProps = Props;
+export type SignatureLinkProps = Props

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { AppProps } from '../../App';
-import { Theme } from '../../../themes';
+import * as React from 'react'
+import { AppProps } from '../../App'
+import { Theme } from '../../../themes'
 
 export type Props = {
-	appProps: AppProps;
-	onClick(): void;
-	isCollapsed: boolean;
-};
+	appProps: AppProps
+	onClick(): void
+	isCollapsed: boolean
+}
 
 export type State = {
 	isMenuOpen: boolean;
@@ -169,13 +169,13 @@ export class Header extends React.Component<Props, State> {
 }
 
 const getTitle = (props: AppProps, isCollapsed: boolean) => {
-	const { text, textWhenCollapsed } = props.header;
+	const { text, textWhenCollapsed } = props.header
 
-	const titleWhenExpanded = text || 'Chatbot';
-	const titleWhenCollapsed = textWhenCollapsed || titleWhenExpanded;
-	const titleToShow = isCollapsed ? titleWhenCollapsed : titleWhenExpanded;
+	const titleWhenExpanded = text || 'Chatbot'
+	const titleWhenCollapsed = textWhenCollapsed || titleWhenExpanded
+	const titleToShow = isCollapsed ? titleWhenCollapsed : titleWhenExpanded
 
-	return titleToShow;
+	return titleToShow
 };
 
 /**
@@ -201,4 +201,4 @@ const checkFeedbotTestMode = (): boolean => {
 	return window.location.hash === '#feedbot-test-mode';
 };
 
-export type HeaderProps = Props;
+export type HeaderProps = Props

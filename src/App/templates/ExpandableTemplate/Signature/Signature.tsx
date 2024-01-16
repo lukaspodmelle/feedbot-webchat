@@ -1,21 +1,19 @@
-import * as React from 'react';
-import { SignatureLink } from './SignatureLink';
-import { Theme } from '../../../../themes';
-import { AppProps } from '../../../App';
+import * as React from 'react'
+import { SignatureLink } from './SignatureLink'
+import { Theme } from '../../../../themes'
+import { AppProps } from '../../../App'
 
-import { SignatureTemplate } from './SignatureTemplate';
+import { SignatureTemplate } from './SignatureTemplate'
 
-type SignatureSchema = Theme['signature'];
-const FEEDYOU_LOGO_IMG_SRC =
-	'https://cdn.feedyou.ai/webchat/feedyou_logo_red.png';
+type SignatureSchema = Theme['signature']
+const FEEDYOU_LOGO_IMG_SRC = 'https://cdn.feedyou.ai/webchat/feedyou_logo_red.png'
 
 export type Props = {
-	signature: SignatureSchema;
-	appProps: AppProps;
-	botId: string;
+	signature: SignatureSchema
+	appProps: AppProps
+	botId: string
 };
-const getLinkQueryString = (botId: string) =>
-	`?utm_source=webchat&utm_medium=chatbot&utm_campaign=${botId}`;
+const getLinkQueryString = (botId: string) => `?utm_source=webchat&utm_medium=chatbot&utm_campaign=${botId}`
 
 export const Signature: React.StatelessComponent<Props> = ({
 	signature,
@@ -28,18 +26,18 @@ export const Signature: React.StatelessComponent<Props> = ({
 		partnerLogoStyle,
 		mode,
 		partnerName,
-	} = signature;
+	} = signature
 	const {
 		theme: { template },
-	} = appProps;
+	} = appProps
 
 	const attachQueryStringToUrl = (url: string) =>
-		`${url}${getLinkQueryString(botId)}`;
+		`${url}${getLinkQueryString(botId)}`
 
 	const enhancedFeedyouUrl = attachQueryStringToUrl('https://feedyou.ai');
 	const enhancedPartnerUrl = partnerLinkUrl
 		? attachQueryStringToUrl(partnerLinkUrl)
-		: enhancedFeedyouUrl;
+		: enhancedFeedyouUrl
 
 	const feedyouLink = (
 		<SignatureLink
@@ -81,7 +79,7 @@ export const Signature: React.StatelessComponent<Props> = ({
 			);
 		}
 		if (mode === 'partner') {
-			return <SignatureTemplate>{partnerLink}</SignatureTemplate>;
+			return <SignatureTemplate>{partnerLink}</SignatureTemplate>
 		}
 		return (
 			<SignatureTemplate>
@@ -102,14 +100,14 @@ export const Signature: React.StatelessComponent<Props> = ({
 				<div style={{ alignSelf: 'center' }}>&</div>
 				{feedyouLink}
 			</SignatureTemplate>
-		);
+		)
 	}
 
 	if (partnerLogoUrl && mode === 'partner') {
-		return <SignatureTemplate>{partnerLink}</SignatureTemplate>;
+		return <SignatureTemplate>{partnerLink}</SignatureTemplate>
 	}
 
-	return <SignatureTemplate>{feedyouLink}</SignatureTemplate>;
-};
+	return <SignatureTemplate>{feedyouLink}</SignatureTemplate>
+}
 
-export type SignatureProps = Props;
+export type SignatureProps = Props

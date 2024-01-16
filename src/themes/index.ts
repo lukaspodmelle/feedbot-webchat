@@ -36,8 +36,8 @@ export type Theme = {
 		partnerLogoUrl: string,
 		partnerLogoStyle: string,
 		partnerLinkUrl: string,
+		mode: string
 		partnerName: string,
-		mode: string,
 	};
 };
 
@@ -56,7 +56,6 @@ export function getStyleForTheme(theme: Theme, remoteConfig: boolean): string {
 		case 'sidebar-new':
 			return SidebarThemeNew(theme)
 	}
-
 	// backward compatibility - knob is new default for remote config, old default is bar
 	return remoteConfig ? ExpandableKnobTheme(theme) : ExpandableBarTheme(theme)
 }
