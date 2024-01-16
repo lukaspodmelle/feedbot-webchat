@@ -7,6 +7,7 @@ import { SidebarThemeNew } from './SidebarThemeNew';
 
 export type Theme = {
 	mainColor: string;
+	secondaryColor: string;
 	template?: {
 		// Dost možná tu nějaký propy chyběj,
 		// tak je neváhej připsat! :)

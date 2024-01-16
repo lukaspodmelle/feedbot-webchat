@@ -1117,6 +1117,7 @@ body .wc-app,
     display: flex;
     align-items: center;
     gap: 8px;
+	user-select: none;
 }
 .feedbot-persistent-menu-toggle {
 	color: $greyDark;
@@ -1142,8 +1143,9 @@ body .wc-app,
     list-style: none;
 	padding: 10px 0;
     margin: 0;
-	min-width: 10em;
+	min-width: 11em;
 	max-width: 17em;
+	font-size: 15px;
 }
 .feedbot-persistent-menu-links a {
     padding: 10px 20px;
@@ -1161,3 +1163,17 @@ body .wc-app,
 	border-radius: 4px;
 	transition: background-color .2s ease, border .2 ease;
 }
+.feedbot-persistent-menu-debug a {
+	display: flex !important;
+	justify-content: space-between;
+	gap: 14px;
+}
+.feedbot-persistent-menu-debug svg {
+	color: $blue;
+}
+// .feedbot-persistent-menu-debug:last-child::after {
+//     content: '';
+//     display: block;
+//     border-bottom: 1px solid $silver;
+//     margin: 10px 0;
+// }
