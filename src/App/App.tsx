@@ -10,7 +10,7 @@ import { generateUserId } from '../utils/generateUserId'
 export type AppProps = ChatProps & {
   theme?: Theme; // option to override theme settings from remote config
   defaultTheme?: Theme; // option to set default template when no remote config found (on default microsite for example)
-  header?: { textWhenCollapsed?: string; text: string, extraHtml?: string, image?: string };
+  header?: { textWhenCollapsed?: string; text: string, extraHtml?: string};
   channel?: { index?: number, id?: string };
   autoExpandTimeout?: number;
   enableScreenshotUpload?: boolean;

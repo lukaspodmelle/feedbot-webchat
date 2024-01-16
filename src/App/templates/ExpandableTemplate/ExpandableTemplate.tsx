@@ -71,7 +71,7 @@ export class ExpandableTemplate extends React.Component<Props, State> {
 	
 	doesTemplateSupportPopupMsg = () => {
 		const templateType = this.props.theme.template && this.props.theme.template.type
-		return ["expandable-knob", "sidebar"].includes(templateType)
+		return ["expandable-knob", "sidebar", "expandable-knob-new", "sidebar-new"].includes(templateType)
 		
 	}
 	

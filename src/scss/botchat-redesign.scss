@@ -1110,6 +1110,10 @@ body .wc-app,
 	gap: 3px;
 }
 .feedbot-supportive-title {
+	max-width: 20em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	font-size: 13px;
 	color: $grey;
 }

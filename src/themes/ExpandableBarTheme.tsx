@@ -1,5 +1,5 @@
-import { BaseTheme } from './BaseTheme';
-import { Theme } from './index';
+import { BaseTheme } from './BaseTheme'
+import { Theme } from './index'
 
 export const ExpandableBarTheme = (theme: Theme) => `
   .feedbot-reset {
@@ -92,4 +92,4 @@ export const ExpandableBarTheme = (theme: Theme) => `
   .wc-carousel .wc-hscroll > ul > li > .wc-card > div > .ac-container > .ac-container .ac-image{
     border-radius: 5px 5px 0 0;
   }
-`;
+`
