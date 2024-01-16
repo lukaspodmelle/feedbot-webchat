@@ -12,7 +12,8 @@ export type Props = {
 	signature: SignatureSchema
 	appProps: AppProps
 	botId: string
-};
+}
+
 const getLinkQueryString = (botId: string) => `?utm_source=webchat&utm_medium=chatbot&utm_campaign=${botId}`
 
 export const Signature: React.StatelessComponent<Props> = ({
@@ -92,7 +93,7 @@ export const Signature: React.StatelessComponent<Props> = ({
 			</SignatureTemplate>
 		);
 	}
-
+	
 	if (partnerLogoUrl && mode === 'both') {
 		return (
 			<SignatureTemplate>
@@ -104,10 +105,18 @@ export const Signature: React.StatelessComponent<Props> = ({
 	}
 
 	if (partnerLogoUrl && mode === 'partner') {
-		return <SignatureTemplate>{partnerLink}</SignatureTemplate>
+		return (
+			<SignatureTemplate>
+				{partnerLink}
+			</SignatureTemplate>
+		)
 	}
 
-	return <SignatureTemplate>{feedyouLink}</SignatureTemplate>
+	return (
+		<SignatureTemplate>
+			{feedyouLink}
+		</SignatureTemplate>
+	)
 }
 
 export type SignatureProps = Props
