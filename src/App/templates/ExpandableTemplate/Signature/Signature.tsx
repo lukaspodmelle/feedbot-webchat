@@ -63,8 +63,8 @@ export const Signature: React.StatelessComponent<Props> = ({
 
 	/* Webchat Redesign Signature */
 	if (
-		template.type === 'expandable-knob-new' ||
-		template.type === 'sidebar-new'
+		template.type === 'expandable-knob-v2' ||
+		template.type === 'sidebar-v2'
 	) {
 		if (mode === 'both') {
 			return (

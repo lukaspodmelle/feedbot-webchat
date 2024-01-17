@@ -32,7 +32,7 @@ export class Header extends React.Component<Props, State> {
 		};
 
 		let backgroundColor;
-		if (template.type !== 'expandable-knob-new' && template.type !== 'sidebar-new') {
+		if (template.type !== 'expandable-knob-v2' && template.type !== 'sidebar-v2') {
 			backgroundColor = mainColor || '#fb584e';
 		}
 
@@ -70,12 +70,12 @@ export class Header extends React.Component<Props, State> {
 		return (
 			<div className="feedbot-header" onClick={isCollapsed && onClick} style={{ backgroundColor }}>
 				<div className="feedbot-header-name">
-					{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
+					{template.type === 'expandable-knob-v2' || template.type === 'sidebar-v2' ? (
 						<div className="feedbot-avatar" style={{ backgroundImage: `url("${avatar}")` }}></div>
 					) : null}
 					<div className="feedbot-name">
 						<span className="feedbot-title">{title}</span>
-						{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
+						{template.type === 'expandable-knob-v2' || template.type === 'sidebar-v2' ? (
 							<span className="feedbot-supportive-title">{template.supportiveTitle}</span>
 						) : null}
 					</div>
@@ -86,7 +86,7 @@ export class Header extends React.Component<Props, State> {
 				)}
 
 				<div className="feedbot-header-actions">
-					{(template.type === 'expandable-knob-new' || template.type === 'sidebar-new') &&
+					{(template.type === 'expandable-knob-v2' || template.type === 'sidebar-v2') &&
 					(checkFeedbotTestMode() || template.persistentMenu.length > 0) ? (
 						<div className="feedbot-persistent-menu" onClick={handlePersistentMenuToggle}>
 							<a className="feedbot-persistent-menu-toggle">
@@ -131,7 +131,7 @@ export class Header extends React.Component<Props, State> {
 						className="feedbot-minimize"
 						href="#"
 					>
-						{template.type === 'expandable-knob-new' || template.type === 'sidebar-new' ? (
+						{template.type === 'expandable-knob-v2' || template.type === 'sidebar-v2' ? (
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="26"

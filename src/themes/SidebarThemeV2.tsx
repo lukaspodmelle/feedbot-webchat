@@ -1,6 +1,6 @@
 import { Theme } from './index';
 
-export const ExpandableKnobThemeNew = (theme: Theme) => `
+export const SidebarThemeV2 = (theme: Theme) => `
 /* webchat redesign */
 .feedbot-wrapper.collapsed .feedbot-header {
     background-image: url(${
@@ -12,14 +12,21 @@ export const ExpandableKnobThemeNew = (theme: Theme) => `
 	});
 }
 .feedbot-wrapper.collapsed .feedbot-header {
-	background-color: ${theme.mainColor ? theme.mainColor : '#0063F8'};
+	background-color: ${theme.mainColor ? theme.mainColor : '#0063f8'};
 }
 
-/* expandable knob specific */
+/* sidebar specific */
+.feedbot-wrapper {
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    border-radius: 0;
+}
 .feedbot-signature {
-	bottom: -23px;
-	font-size: 13px;
-	right: -5px;
+    bottom: -2px;
+    font-size: 11px;
+    right: 13px;
 }
 
 /* user custom css */

@@ -2,8 +2,8 @@ import { ExpandableBarTheme } from './ExpandableBarTheme'
 import { FullScreenTheme } from './FullScreenTheme'
 import { ExpandableKnobTheme } from './ExpandableKnobTheme'
 import { SidebarTheme } from './SidebarTheme'
-import { ExpandableKnobThemeNew } from './ExpandableKnobThemeNew'
-import { SidebarThemeNew } from './SidebarThemeNew'
+import { ExpandableKnobThemeV2 } from './ExpandableKnobThemeV2'
+import { SidebarThemeV2 } from './SidebarThemeV2'
 
 export type Theme = {
 	mainColor: string;
@@ -51,10 +51,10 @@ export function getStyleForTheme(theme: Theme, remoteConfig: boolean): string {
 			return ExpandableKnobTheme(theme)
 		case 'sidebar':
 			return SidebarTheme(theme)
-		case 'expandable-knob-new':
-			return ExpandableKnobThemeNew(theme)
-		case 'sidebar-new':
-			return SidebarThemeNew(theme)
+		case 'expandable-knob-v2':
+			return ExpandableKnobThemeV2(theme)
+		case 'sidebar-v2':
+			return SidebarThemeV2(theme)
 	}
 	// backward compatibility - knob is new default for remote config, old default is bar
 	
